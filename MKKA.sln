@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKALibrary", "ClassLibrary1\MKKALibrary.csproj", "{D7D88988-408C-403E-8418-26FAD7733E0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{395277C6-92AF-4443-92B9-218DB411C5B3}"
+	ProjectSection(SolutionItems) = preProject
+		XMLFile1.xml = XMLFile1.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBReader", "DBReader\DBReader.csproj", "{2C0540BF-8685-4E28-B9B0-5FB89E80B704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKAHelper", "MKKAHelper\MKKAHelper.csproj", "{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7D88988-408C-403E-8418-26FAD7733E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D88988-408C-403E-8418-26FAD7733E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D88988-408C-403E-8418-26FAD7733E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D88988-408C-403E-8418-26FAD7733E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C533AE38-A99D-4D62-A342-1570EBF4E468}
+	EndGlobalSection
+EndGlobal

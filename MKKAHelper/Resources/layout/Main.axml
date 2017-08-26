@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="What would you like to do?"
+        android:layout_width="match_parent"
+        android:layout_height="42.0dp"
+        android:id="@+id/textView1"
+        android:elegantTextHeight="true"
+        android:textSize="30" />
+    <Button
+        android:text="Kata Callout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/KataCalloutButton" />
+    <Button
+        android:text="Kata Questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/KataQuestionsButton" />
+    <Button
+        android:text="Other Questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/OtherQuestionsButton" />
+    <Button
+        android:text="Review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reviewButton" />
+</LinearLayout>
