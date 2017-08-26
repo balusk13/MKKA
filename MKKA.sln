@@ -8,8 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		XMLFile1.xml = XMLFile1.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBReader", "DBReader\DBReader.csproj", "{2C0540BF-8685-4E28-B9B0-5FB89E80B704}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKAHelper", "MKKAHelper\MKKAHelper.csproj", "{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKALibrary", "MKKALibrary\MKKALibrary.csproj", "{D7D88988-408C-403E-8418-26FAD7733E0B}"
@@ -20,10 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C0540BF-8685-4E28-B9B0-5FB89E80B704}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MKKA
-    class Setting
+{
+    public class KataGroup
     {
+            public string KataID { get; set; }
+            public int GroupID { get; set; }
     }
 }
