@@ -10,12 +10,12 @@ namespace MKKA
     {
         public Trivia GenKataQuestion(ref List<Kata> katas, ref List<Setting> settings)
         {
-            
+            return null;    
         }
 
         public Trivia GenBoardDanQuestion(ref List<Kata> katas, ref List<Setting> settings)
         {
-            
+            return null;   
         }
     }
 }

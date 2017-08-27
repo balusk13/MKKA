@@ -9,6 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKAHelper", "MKKAHelper\MKKAHelper.csproj", "{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D7D88988-408C-403E-8418-26FAD7733E0B} = {D7D88988-408C-403E-8418-26FAD7733E0B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKALibrary", "MKKALibrary\MKKALibrary.csproj", "{D7D88988-408C-403E-8418-26FAD7733E0B}"
 EndProject
