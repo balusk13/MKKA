@@ -21,15 +21,8 @@ namespace MKKA
         private const string db = "Karate.db";
         private SQLiteConnection getConn()
         {
-            try
-            {
-                SQLiteConnection conn = new SQLiteConnection(db);
-                return conn;
-            }
-            catch (SQLiteException ex)
-            {
-                return null;
-            }
+            SQLiteConnection conn = new SQLiteConnection(db);
+            return conn;
         }
         public KataMove GetKataMove(string kataID, int orderNumber)
         {

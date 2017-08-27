@@ -6,19 +6,28 @@ using System.Threading.Tasks;
 
 namespace MKKA
 {
-    class MKKAEngine
+    public class MKKAEngine
     {
+        private static MKKAEngine mkkaSingleton;
         List<DanRanking> rankings;
         List<Kata> katas;
         List<BoardMember> board;
         List<Setting> settings;
         DBAccessor db;
         QuestionGenerator gen;
-        MKKAEngine()
+        private MKKAEngine()
         {
             db = new DBAccessor();
             gen = new QuestionGenerator();
             LoadDB();
+        }
+        public static MKKAEngine getEngine()
+        {
+            if (mkkaSingleton == null)
+            {
+                mkkaSingleton = new MKKAEngine();
+            }
+            return mkkaSingleton;
         }
         private void LoadDB()
         {
