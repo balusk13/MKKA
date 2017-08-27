@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MKKA
-    class Setting
+{ 
+    public class Setting
     {
+        public string SettingKey { get; set; }
+        public string settingValue { get; set; }
     }
 }

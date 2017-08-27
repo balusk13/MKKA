@@ -1,4 +1,4 @@
-﻿using MKKALibrary.Models;
+﻿using MKKA;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -73,8 +73,8 @@ namespace MKKA
 
             var ret = new List<int>();
             var conn = getConn();
-            var groups = conn.Query<KataGroup>("SELECT distinct GROUPID from " + groups);
-            foreach (var group in groups)
+            var groupList = conn.Query<KataGroup>("SELECT distinct GROUPID from " + groups);
+            foreach (var group in groupList)
             {
                 ret.Add(group.GroupID);
             }
@@ -86,6 +86,30 @@ namespace MKKA
             var ret = new List<BoardMember>();
             var conn = getConn();
             var group = conn.Query<BoardMember>("SELECT * from " + board);
+            foreach (var member in group)
+            {
+                ret.Add(member);
+            }
+            return ret;
+        }
+        public List<DanRanking> GetDanRankings()
+        {
+
+            var ret = new List<DanRanking>();
+            var conn = getConn();
+            var group = conn.Query<DanRanking>("SELECT * from " + dan);
+            foreach (var member in group)
+            {
+                ret.Add(member);
+            }
+            return ret;
+        }
+        public List<Setting> GetSettings()
+        {
+
+            var ret = new List<Setting>();
+            var conn = getConn();
+            var group = conn.Query<Setting>("SELECT * from " + settings);
             foreach (var member in group)
             {
                 ret.Add(member);
