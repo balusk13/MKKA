@@ -1,10 +1,12 @@
-﻿using MKKA;
+﻿
+using MKKA;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace MKKA
 {
@@ -16,14 +18,129 @@ namespace MKKA
         private const string moves = "KataMoves";
         private const string groups = "KataGroups";
         private const string board = "BoardMembers";
-        private const string settings = "Settings";
+        private const string settings = "Setting";
         private const string dan = "DanRankings";
         private const string db = "Karate.db";
+
+        private const string settingdb = "Setting.db";
+        SQLiteConnection conn;
+        SQLiteConnection settingConn;
+        string error;
         private SQLiteConnection getConn()
         {
-            SQLiteConnection conn = new SQLiteConnection(db);
+            try
+            {
+                if (conn == null)
+                {
+                    string newPath = GetDatabasePath();
+                    conn = new SQLiteConnection(newPath);
+                    var info = conn.GetTableInfo(dan);
+                    info.Clear();
+                }
+                return conn; 
+                }
+            catch(Exception e)
+            {
+                error = e.Message;   
+            }
             return conn;
         }
+        private SQLiteConnection getSettingConn()
+        {
+            try
+            {
+                if (settingConn == null)
+                {
+                    var dbConn = getConn();
+                    string newPath = GetSettingsPath();
+                    settingConn = new SQLiteConnection(newPath);
+                    var info = settingConn.GetTableInfo(settings);
+                    if (info.Count == 0)
+                    {
+                        InitializeSettings();
+                    }
+                }
+                return settingConn;
+            }
+            catch (Exception e)
+            {
+                error = e.Message;
+            }
+            return settingConn;
+        }
+
+        private void InitializeSettings()
+        {
+            var newSettings = new List<Setting>();
+            Setting tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.usingKataGroup1;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.usingKataGroup2;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.usingKataGroup3;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.usingKataGroup4;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.usingKataGroup5;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.usingKataGroup6;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.secondsBetweenCallouts;
+            tmp.SettingType = SettingTypeEnum.settingTypeFloat;
+            tmp.SettingValue = "5.0";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.leftRightSwitch;
+            tmp.SettingType = SettingTypeEnum.settingTypeBool;
+            tmp.SettingValue = "1";
+            newSettings.Add(tmp);
+
+            tmp = new Setting();
+            tmp.SettingKey = SettingKeyEnum.leftRightFrequency;
+            tmp.SettingType = SettingTypeEnum.settingTypePercentage;
+            tmp.SettingValue = "5";
+            newSettings.Add(tmp);
+
+            settingConn.CreateTable<Setting>();
+            settingConn.InsertAll(newSettings);
+            var info = settingConn.GetTableInfo(settings);
+            info.Clear();
+        }
+
+        internal static string GetDatabasePath()
+        {
+            return DependencyService.Get<IFileHelper>().GetLocalFilePath(db);
+        }
+        internal static string GetSettingsPath()
+        {
+            return DependencyService.Get<IFileHelper>().GetLocalFilePath(settingdb);
+        }
+
         public KataMove GetKataMove(string kataID, int orderNumber)
         {
             var conn = getConn();
@@ -33,7 +150,7 @@ namespace MKKA
         public int GetKataSize(string kataID)
         {
             var conn = getConn();
-            var kataMoves = conn.Query<KataMove>("SELECT * from " + moves + " where KataID = ?", kataID);
+            var kataMoves = conn.Query< List<KataMove>>("SELECT * from " + moves + " where KataID = ?", kataID);
             return kataMoves.Count();
         }
 
@@ -49,6 +166,13 @@ namespace MKKA
             }
             return ret;
         }
+
+        internal void SetSetting(SettingKeyEnum key, string value)
+        {
+            var conn = getSettingConn();
+            conn.Execute("UPDATE Settings SET SettingValue = ? where SettingKey = ?", value, key);
+        }
+
         public List<string> GetKataList(int groupID)
         {
 
@@ -61,15 +185,15 @@ namespace MKKA
             }
             return ret;
         }
-        public List<int> GetKataGroups()
+        public List<KataGroup> GetKataGroups()
         {
 
-            var ret = new List<int>();
+            var ret = new List<KataGroup>();
             var conn = getConn();
-            var groupList = conn.Query<KataGroup>("SELECT distinct GROUPID from " + groups);
+            var groupList = conn.Query<KataGroup>("SELECT * from " + groups);
             foreach (var group in groupList)
             {
-                ret.Add(group.GroupID);
+                ret.Add(group);
             }
             return ret;
         }
@@ -101,7 +225,7 @@ namespace MKKA
         {
 
             var ret = new List<Setting>();
-            var conn = getConn();
+            var conn = getSettingConn();
             var group = conn.Query<Setting>("SELECT * from " + settings);
             foreach (var member in group)
             {

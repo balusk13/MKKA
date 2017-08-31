@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{395277C6-92AF-4443-92B9-218DB411C5B3}"
-	ProjectSection(SolutionItems) = preProject
-		XMLFile1.xml = XMLFile1.xml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKKAHelper", "MKKAHelper\MKKAHelper.csproj", "{2C5DF85B-5A64-4ABB-8E4D-AB8A30788C52}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D7D88988-408C-403E-8418-26FAD7733E0B} = {D7D88988-408C-403E-8418-26FAD7733E0B}

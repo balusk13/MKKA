@@ -7,45 +7,42 @@
     android:layoutMode="clipBounds"
     tools:actionBarNavMode="list">
     <TextView
-        android:text="Text"
-        android:id="@+id/textView1"
+        android:text="Press Start to begin."
+        android:id="@+id/IntroText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:text="Large Text"
+        android:text="1A"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/CurrentKataLabel"
+        android:id="@+id/KataDisplayText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:includeFontPadding="true"
+        android:textSize="150dp" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/linearLayout1"
-        android:layout_gravity="fill_horizontal"
-        android:layoutMode="opticalBounds"
-        android:verticalScrollbarPosition="defaultPosition"
-        android:measureWithLargestChild="true">
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:weightSum="2">
         <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button1"
-            android:verticalScrollbarPosition="left"
-            android:layout_gravity="bottom" />
-        <RelativeLayout
-            android:minWidth="25px"
-            android:minHeight="25px"
+            android:text="Back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/relativeLayout1"
-            android:layout_gravity="right">
-            <Button
-                android:text="Button"
-                android:id="@+id/button2"
-                android:verticalScrollbarPosition="right"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
+            android:id="@+id/BackButton"
+            android:layout_gravity="left"
+            android:layout_weight="1" />
+        <Button
+            android:text="Start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/StartStopButton"
+            android:layout_gravity="right"
+            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>

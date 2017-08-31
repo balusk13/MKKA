@@ -9,9 +9,12 @@ namespace MKKA
 {
     public class Kata
     {
+        public string Name { get; set; }
+        List<KataMove> moves { get; }
         public Kata(string id)
         {
             Name = id;
+            moves = new List<KataMove>();
             DBAccessor db = new DBAccessor();
             int size = db.GetKataSize(id);
             for(int i = 1; i <= size; ++i)
@@ -19,12 +22,9 @@ namespace MKKA
                 moves.Add(db.GetKataMove(Name, i));
             }
         }
-        public string Name { get; set; }
-        List<KataMove> moves { get;}
         public int GetSize()
         {
             return moves.Count;
         }
-
     }
 }
