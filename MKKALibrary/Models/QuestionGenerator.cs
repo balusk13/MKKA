@@ -9,7 +9,7 @@ namespace MKKA
     class QuestionGenerator
     {
         static string[] ordinals = new[] { "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"};
-        public Trivia GenKataQuestion(ref MKKAEngine eng)
+        public Trivia GenKataQuestion(MKKAEngine eng)
         {
             var ret = new Trivia("tmp");
             Random r = new Random();
@@ -23,7 +23,7 @@ namespace MKKA
             return ret;
         }
 
-        public Trivia GenBoardDanQuestion(ref MKKAEngine eng)
+        public Trivia GenBoardDanQuestion(MKKAEngine eng)
         {
             /*
             possible question
