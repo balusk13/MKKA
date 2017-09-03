@@ -9,50 +9,103 @@
         android:layout_height="42.0dp"
         android:id="@+id/textView1"
         android:elegantTextHeight="true" />
-    <Button
-        android:text="Kata Callout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/KataCalloutButton" />
-    <Button
-        android:text="Kata Questions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/KataQuestionsButton" />
-    <Button
-        android:text="Other Questions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/OtherQuestionsButton" />
-    <Button
-        android:text="Review"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reviewButton" />
-    <Button
-        android:text="Settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/settingsButton"
-        android:layout_marginRight="0.0dp" />
-    <Button
-        android:text="Donate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/donateButton" />
     <LinearLayout
         android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/linearLayout1"
-        android:layout_marginBottom="1dp">
-        <Button
-            android:text="Exit"
-            android:id="@+id/exitButton"
+        android:id="@+id/ButtonsLayout">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
+            android:layout_height="match_parent"
+            android:id="@+id/LeftLayout"
+            android:layout_weight="1"
+            android:layout_gravity="left">
+            <Button
+                android:text="Kata Callout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/KataCalloutButton"
+                android:layout_weight="1" />
+            <Button
+                android:text="Kata Questions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/KataQuestionsButton"
+                android:layout_weight="1" />
+            <Button
+                android:text="Other Questions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/OtherQuestionsButton"
+                android:layout_weight="1" />
+            <Button
+                android:text="Review"
+                android:id="@+id/reviewButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <Button
+                android:text="Line Drills"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/LineDrillButton"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView1"
+            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/RightLayout"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+            <Button
+                android:text="Settings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/settingsButton"
+                android:layout_marginRight="0.0dp"
+                android:layout_weight="1" />
+            <Button
+                android:text="Donate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/donateButton"
+                android:layout_weight="1" />
+            <Button
+                android:text="Report/Suggest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/reportButton"
+                android:layout_weight="1" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ExitLayout"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.75">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearLayout1"
+                    android:layout_weight="0.75" />
+                <Button
+                    android:text="Exit"
+                    android:id="@+id/exitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

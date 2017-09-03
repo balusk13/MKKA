@@ -48,7 +48,7 @@ namespace MKKA
                         {
                             if (i == answerLoc)
                             {
-                                ret.choices.Add(ret.answer)
+                                ret.choices.Add(ret.answer);
                             }
                             else
                                 ret.choices.Add(eng.rankings.ElementAt(r.Next() % 10).Name);
@@ -65,7 +65,7 @@ namespace MKKA
                         {
                             if (i == answerLoc)
                             {
-                                ret.choices.Add(ret.answer)
+                                ret.choices.Add(ret.answer);
                             }
                             else
                                 ret.choices.Add(eng.rankings.ElementAt(r.Next() % 10).Degree.ToString());
