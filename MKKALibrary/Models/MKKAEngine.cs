@@ -140,7 +140,7 @@ namespace MKKA
         }
         public Trivia GetKataQuestion()
         {
-            return gen.GenKataQuestion(ref katas, ref settings);
+            return gen.GenKataQuestion(this);
         }
 
         public string GetRandomActiveKata()
@@ -151,7 +151,7 @@ namespace MKKA
 
         public Trivia GetBoardDanQuestion()
         {
-            return gen.GenBoardDanQuestion(ref katas, ref settings);
+            return gen.GenBoardDanQuestion(this);
         }
 
         public Trivia SpecialFunctionX()
