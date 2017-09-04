@@ -153,10 +153,5 @@ namespace MKKA
         {
             return gen.GenBoardDanQuestion(this);
         }
-
-        public Trivia SpecialFunctionX()
-        {
-            return new Trivia("Go Speed Racer");
-        }
     }
 }

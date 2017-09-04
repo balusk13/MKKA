@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/QuestionText"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:gravity="center" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ButtonsLayout"
+        android:layout_weight="1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/LeftButtonsLayout"
+            android:layout_weight="1">
+            <Button
+                android:text="Choice 1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Choice1Button"
+                android:layout_weight="1" />
+            <Button
+                android:text="Choice 4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Choice4Button"
+                android:layout_weight="1" />
+            <Button
+                android:text="Cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/BackButton"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/MiddleButtonsLayout"
+            android:layout_weight="1">
+            <Button
+                android:text="Choice 2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Choice2Button"
+                android:layout_weight="1" />
+            <Button
+                android:text="Choice 5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Choice5Button"
+                android:layout_weight="1" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout1"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ResultGraphic"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/RightButtonsLayout"
+            android:layout_weight="1">
+            <Button
+                android:text="Choice 3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Choice3Button"
+                android:layout_weight="1" />
+            <Button
+                android:text="Choice 6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Choice6Button"
+                android:layout_weight="1" />
+            <Button
+                android:text="Next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/NextButton"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

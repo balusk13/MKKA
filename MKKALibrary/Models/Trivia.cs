@@ -5,12 +5,12 @@ namespace MKKA
     public class Trivia
     {
         public string Question { get; set; }
-        public List<string> choices;
+        public List<string> choices { get; set; }
         public string answer;
 
-        public Trivia(string youBetterBelieveIt)
+        public Trivia()
         {
-            answer = youBetterBelieveIt;
+            choices = new List<string>();
         }
 
     }

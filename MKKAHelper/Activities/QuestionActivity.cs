@@ -1,8 +1,14 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Android.App;
+using Android.Content;
 using Android.OS;
+using Android.Runtime;
+using Android.Views;
 using Android.Widget;
 using MKKA;
-using System;
 
 namespace MKKAHelper
 {
@@ -63,7 +69,7 @@ namespace MKKAHelper
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Questions);
+            SetContentView(Resource.Layout.QuestionLayout);
             // Create your application here
             eng = MKKAEngine.getEngine();
             FindViews();
@@ -111,10 +117,10 @@ namespace MKKAHelper
 
         private void AnimateButton(Button choiceButton, bool v)
         {
-            if(v)
-                ResultGraphic.SetImageResource(Resource.Drawable.check);
-            else
-                ResultGraphic.SetImageResource(Resource.Drawable.X);
+            //if(v)
+            //    ResultGraphic.SetImageResource(Resource.Drawable.check);
+            //else
+            //    ResultGraphic.SetImageResource(Resource.Drawable.X);
 
         }
 
