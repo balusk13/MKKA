@@ -42,7 +42,7 @@ namespace MKKA
                     {
                         int val = r.Next() % eng.rankings.Count;
                         DanRanking rank = eng.rankings.ElementAt(val);
-                        ret.Question = "What rank is " + ordinals[rank.Degree] + " degree?";
+                        ret.Question = "What rank is " + ordinals[rank.Degree -1] + " degree?";
                         ret.answer = rank.Name;
                         int answerLoc = r.Next() % 6;
                         for (int i = 0; ret.choices.Count < 6; ++i)

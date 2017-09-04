@@ -13,7 +13,7 @@ using MKKA;
 namespace MKKAHelper
 {
         [Activity(Label = "Questions")]
-        public class QuestionActivity : Activity
+        public abstract class QuestionActivity : Activity
         {
         internal Button BackButton;
         internal Button NextButton;
@@ -63,7 +63,8 @@ namespace MKKAHelper
         }
         internal void NextButton_Click(object sender, EventArgs e)
         {
-            LoadQuestion();
+            Trivia t = GetTrivia();
+            LoadTrivia(t);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -74,13 +75,10 @@ namespace MKKAHelper
             eng = MKKAEngine.getEngine();
             FindViews();
             SetUpEvents();
-            LoadQuestion();
+            Trivia t = GetTrivia();
+            LoadTrivia(t);
         }
-        public void LoadQuestion()
-        {
-            Trivia question = eng.GetBoardDanQuestion();
-            LoadTrivia(question);
-        }
+        public abstract Trivia GetTrivia();
         public void LoadTrivia(Trivia t)
         {
             ++attempted;
@@ -100,9 +98,13 @@ namespace MKKAHelper
 
         internal void Choice1Button_Click(object sender, EventArgs e)
         {
-            if (Choice1Button.Text == question.answer)
+            CheckButton(Choice1Button);
+        }
+        internal void CheckButton(Button button)
+        {
+            if (button.Text == question.answer)
             {
-                AnimateButton(Choice1Button, true);
+                AnimateButton(button, true);
                 NextButton.Enabled = true;
                 BackButton.Text = "Finish";
                 if (currCorrect)
@@ -110,39 +112,38 @@ namespace MKKAHelper
             }
             else
             {
-                AnimateButton(Choice1Button, false);
+                AnimateButton(button, false);
                 currCorrect = false;
             }
         }
-
-        private void AnimateButton(Button choiceButton, bool v)
+        private void AnimateButton(Button button, bool v)
         {
-            //if(v)
-            //    ResultGraphic.SetImageResource(Resource.Drawable.check);
-            //else
-            //    ResultGraphic.SetImageResource(Resource.Drawable.X);
+            if (v)
+                ResultGraphic.SetImageResource(Resource.Drawable.Check);
+            else
+                ResultGraphic.SetImageResource(Resource.Drawable.X);
 
         }
 
         internal void Choice2Button_Click(object sender, EventArgs e)
         {
-
+            CheckButton(Choice2Button);
         }
         internal void Choice3Button_Click(object sender, EventArgs e)
         {
-
+            CheckButton(Choice3Button);
         }
         internal void Choice4Button_Click(object sender, EventArgs e)
         {
-
+            CheckButton(Choice4Button);
         }
         internal void Choice5Button_Click(object sender, EventArgs e)
         {
-
+            CheckButton(Choice5Button);
         }
         internal void Choice6Button_Click(object sender, EventArgs e)
         {
-
+            CheckButton(Choice6Button);
         }
 
     }

@@ -63,7 +63,7 @@ namespace MKKAHelper
 
         private void OtherQuestionsButton_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuestionActivity));
+            var intent = new Intent(this, typeof(DanBoardQuestionActivity));
             StartActivity(intent);
         }
 
