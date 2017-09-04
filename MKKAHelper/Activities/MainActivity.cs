@@ -5,10 +5,11 @@ using System;
 using Android.Content;
 using Android.Widget;
 using System.IO;
+using Android.Content.PM;
 
 namespace MKKAHelper
 {
-    [Activity(Label = "MKKA Helper", MainLauncher = true)]
+    [Activity(Label = "MKKA Helper", MainLauncher = true, ScreenOrientation = ScreenOrientation.Landscape)]
     public class MainActivity : Activity
     {
         private Button kataCalloutButton;
@@ -62,7 +63,7 @@ namespace MKKAHelper
 
         private void OtherQuestionsButton_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(OtherQuestionActivity));
+            var intent = new Intent(this, typeof(QuestionActivity));
             StartActivity(intent);
         }
 

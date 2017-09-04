@@ -40,7 +40,10 @@ namespace MKKA
             {
                 case 0:
                     {
-                        DanRanking rank = eng.rankings.ElementAt(r.Next() % eng.rankings.Count);
+                        HashSet<int> used = new HashSet<int>();
+                        int val = r.Next() % eng.rankings.Count;
+                        used.Add(val);
+                        DanRanking rank = eng.rankings.ElementAt(val);
                         ret.Question = "What rank is " + ordinals[rank.Degree + 1] + " degree?";
                         ret.answer = rank.Name;
                         int answerLoc = r.Next() % 6;
@@ -51,13 +54,20 @@ namespace MKKA
                                 ret.choices.Add(ret.answer);
                             }
                             else
-                                ret.choices.Add(eng.rankings.ElementAt(r.Next() % 10).Name);
+                            {
+                                val = r.Next() % eng.rankings.Count;
+                                if (used.Add(val))
+                                    ret.choices.Add(eng.rankings.ElementAt(val).Name);
+                            }
                         }
                         return ret;
                     }
                 case 1:
                     {
-                        DanRanking rank = eng.rankings.ElementAt(r.Next() % eng.rankings.Count);
+                        HashSet<int> used = new HashSet<int>();
+                        int val = r.Next() % eng.rankings.Count;
+                        used.Add(val);
+                        DanRanking rank = eng.rankings.ElementAt(val);
                         ret.Question = "What degree is " + rank.Name + "?";
                         ret.answer = rank.Degree.ToString();
                         int answerLoc = r.Next() % 6;
@@ -68,13 +78,20 @@ namespace MKKA
                                 ret.choices.Add(ret.answer);
                             }
                             else
-                                ret.choices.Add(eng.rankings.ElementAt(r.Next() % 10).Degree.ToString());
+                            {
+                                val = r.Next() % eng.rankings.Count;
+                                if (used.Add(val))
+                                    ret.choices.Add(eng.rankings.ElementAt(val).Degree.ToString());
+                            }
                         }
                         return ret;
                     }
                 case 2:
                     {
-                        BoardMember member = eng.board.ElementAt(r.Next() % eng.board.Count);
+                        HashSet<int> used = new HashSet<int>();
+                        int val = r.Next() % eng.board.Count;
+                        used.Add(val);
+                        BoardMember member = eng.board.ElementAt(val);
                         ret.Question = "Who is the " + member.Title + "?";
                         ret.answer = "Sensei " + member.FirstName + " " + member.LastName;
                         int answerLoc = r.Next() % 5;
@@ -86,16 +103,25 @@ namespace MKKA
                             }
                             else
                             {
-                                var wrong = eng.board.ElementAt(r.Next() % eng.board.Count);
-                                ret.choices.Add("Sensei " + wrong.FirstName + " " + wrong.LastName);
+                                val = r.Next() % eng.board.Count;
+                                if (used.Add(val))
+                                {
+                                    var wrong = eng.board.ElementAt(val);
+                                    ret.choices.Add("Sensei " + wrong.FirstName + " " + wrong.LastName);
+                                }
                             }
                         }
+                        ret.choices.Add("None");
                         return ret;
                     }
                 case 3:
                     {
-                        BoardMember member = eng.board.ElementAt(r.Next() % eng.board.Count);
-                        ret.Question = "What position does Sensei " + member.FirstName + " " + member.LastName + " hold?";
+                        HashSet<int> used = new HashSet<int>();
+                        int val = r.Next() % eng.board.Count;
+                        used.Add(val);
+                        BoardMember member = eng.board.ElementAt(r.Next() % val);
+                        int chanceForNoSensei = r.Next() % 10;
+                        ret.Question = "What position does " + (chanceForNoSensei == 0 ? "" : "Sensei ") + member.FirstName + " " + member.LastName + " hold?";
                         ret.answer = member.Title;
                         int answerLoc = r.Next() % 5;
                         for (int i = 0; ret.choices.Count < 5; ++i)
@@ -106,9 +132,18 @@ namespace MKKA
                             }
                             else
                             {
-                                var wrong = eng.board.ElementAt(r.Next() % eng.board.Count);
-                                ret.choices.Add(wrong.Title);
+                                val = r.Next() % eng.board.Count;
+                                if (used.Add(val))
+                                {
+                                    var wrong = eng.board.ElementAt(val);
+                                    ret.choices.Add(wrong.Title);
+                                }
                             }
+                        }
+                        ret.choices.Add("None");
+                        if (chanceForNoSensei == 0)
+                        {
+                            ret.answer = "None";
                         }
                         return ret;
                     }

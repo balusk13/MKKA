@@ -138,19 +138,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\OtherQuestionActivity.cs" />
     <Compile Include="AndroidFileHelper.cs" />
-    <Compile Include="CalloutActivity.cs" />
-    <Compile Include="KataQuestionActivity.cs" />
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="OtherQuestionActivity.cs" />
+    <Compile Include="Activities\CalloutActivity.cs" />
+    <Compile Include="Activities\KataQuestionActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\QuestionActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReviewActivity.cs" />
-    <Compile Include="SettingsActivity.cs" />
+    <Compile Include="Activities\ReviewActivity.cs" />
+    <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="TextToSpeechImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <AndroidAsset Include="Assets\Karate.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
@@ -164,7 +164,7 @@
     <AndroidResource Include="Resources\layout\SettingsLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\QuestionsLayout.axml">
+    <AndroidResource Include="Resources\layout\Questions.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -175,7 +175,6 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\mipmap-hdpi\" />
     <Folder Include="Resources\mipmap-mdpi\" />
     <Folder Include="Resources\mipmap-xhdpi\" />
@@ -187,6 +186,12 @@
       <Project>{d7d88988-408c-403e-8418-26fad7733e0b}</Project>
       <Name>MKKALibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\X.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

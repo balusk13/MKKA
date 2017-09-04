@@ -40,16 +40,16 @@
                 android:id="@+id/OtherQuestionsButton"
                 android:layout_weight="1" />
             <Button
-                android:text="Review"
-                android:id="@+id/reviewButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <Button
                 android:text="Line Drills"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/LineDrillButton"
+                android:layout_weight="1" />
+            <Button
+                android:text="Review"
+                android:id="@+id/reviewButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
         <ImageView
